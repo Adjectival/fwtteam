@@ -22,7 +22,7 @@ Fantasy War Tactics™ (Nexon) is an army management game. This app helps you ma
     - :arrows_counterclockwise: Balance
     - :large_blue_circle: Defense
     - :heart_decoration: Support
-  - terrain (field,water,swamp,thorns,poison,lava,glacier)
+    - terrain (field,water,swamp,thorns,poison,lava,glacier)
 
 
 ## Known Issues
