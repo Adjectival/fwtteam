@@ -80,8 +80,8 @@ const HEROES: Hero[] = [
       <i class="em em-large_blue_circle"></i> Defense
       <i class="em em-heart_decoration"></i> Support</div>
   </div>
-  <ul class="flex-row m-2 p-2 bg-success">
-    <li *ngFor="let hero of heroes">
+  <ul class="flex-row m-2 p-2 list-unstyled">
+    <li *ngFor="let hero of heroes" class="card flex-row justify-content-around m-2 p-2 bg-faded">
       <h6>{{hero.id}}</h6>
       <h2>{{hero.name}}</h2>
       <label>prop: </label><input [(ngModel)]="hero.property" placeholder="property">
