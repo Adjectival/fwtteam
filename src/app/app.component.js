@@ -6,20 +6,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var Character = (function () {
-    function Character() {
-        this.name = 'Momo';
-        this.property = 'Rock';
-        this.type = 'Attack';
-        this.terrain = 'Field';
+var Hero = (function () {
+    function Hero() {
     }
-    return Character;
+    return Hero;
 }());
-Character = __decorate([
+exports.Hero = Hero;
+var AppComponent = (function () {
+    function AppComponent() {
+        this.title = 'FWT Team Builder';
+        this.hero = {
+            id: 1,
+            name: 'Momo',
+            property: 'rock',
+            type: 'attack',
+            terrain: 'field',
+        };
+    }
+    return AppComponent;
+}());
+AppComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "<div class=\"card m-2 p-2 bg-faded\"><h1 class=\"display-4\">FWT_Team Builder</h1><h2>{{name}}</h2><h3>{{property}}</h3><h3>{{type}}</h3><h3>{{terrain}}</h3></div>",
+        selector: 'fwt-tb',
+        template: "\n  <h1 class=\"display-4\">{{title}}</h1>\n  <div class=\"card m-2 p-2 bg-success\">\n    <h3>{{hero.id}}</h3>\n    <h2>{{hero.name}}</h2>\n    <h2>{{hero.property}}</h2>\n    <h2>{{hero.type}}</h2>\n    <h2>{{hero.terrain}}</h2>\n  </div>"
     })
-], Character);
-exports.Character = Character;
+], AppComponent);
+exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
