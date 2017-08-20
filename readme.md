@@ -12,13 +12,16 @@ Fantasy War Tactics™ (Nexon) is an army management game. This app helps you ma
 ## User Stories
 - I want to add / remove (max 5) members to a team
 - I want to sort the list of all members by
-  - property (:gem:/:page_facing_up:/:scissors:)
+  - property
+    - :gem: Rock
+    - :page_facing_up: Paper
+    - :scissors: Scissors
   - type
-    - :eight_spoked_asterisk:A.Attack
-    - :large_orange_diamond:Attack
-    - :arrows_counterclockwise:Balance
-    - :large_blue_circle:Defense
-    - :heart_decoration:Support
+    - :eight_spoked_asterisk: A.Attack
+    - :large_orange_diamond: Attack
+    - :arrows_counterclockwise: Balance
+    - :large_blue_circle: Defense
+    - :heart_decoration: Support
   - terrain (field,water,swamp,thorns,poison,lava,glacier)
 
 
