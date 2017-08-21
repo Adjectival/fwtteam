@@ -66,7 +66,7 @@ const HEROES: Hero[] = [
 @Component({
   selector: 'fwt-tb',
   template: `
-  <div class="row mt-2" style="background:papayawhip;">
+  <div class="row" style="background:papayawhip;">
     <h1 class="display-4 col">{{title}}</h1>
     <div class="col">
       <h4>property</h4>
@@ -87,16 +87,51 @@ const HEROES: Hero[] = [
       </ul>
     </div>
   </div>
-  <ul class="flex-row m-2 p-2 list-unstyled">
-    <li *ngFor="let hero of heroes" class="card flex-row justify-content-around m-2 p-2 bg-faded">
-      <h6>{{hero.id}}</h6>
+  <div *ngIf="selectedHero"
+    style="background:skyblue;">
+    <h1>{{selectedHero.name}}</h1>
+    <h2>{{selectedHero.property}}</h2>
+    <h2>{{selectedHero.type}}</h2>
+  </div>
+  <ul class="m-2 p-2 list-unstyled list-group">
+    <li *ngFor="let hero of heroes"
+      (click)="onSelect(hero)"
+      [class.selected]="hero===selectedHero"
+      class="list-group-item flex-row justify-content-around m-2 p-2 bg-faded">
+      <h4><span class="badge badge-default">{{hero.id}}</span></h4>
       <h2>{{hero.name}}</h2>
       <label>prop: </label><input [(ngModel)]="hero.property" placeholder="property">
       <h2>{{hero.type}}</h2>
     </li>
-  </ul>`
+  </ul>`,
+  styles: [`
+    .selected {
+      background-color: #CFD8DC !important;
+      color: white;
+    }
+    .heroes {
+      margin: 0 0 2em 0;
+      list-style-type: none;
+      padding: 0;
+      width: 15em;
+    }
+    .heroes li.selected:hover {
+      background-color: #BBD8DC !important;
+      color: white;
+    }
+    .heroes li:hover {
+      color: #607D8B;
+      background-color: #DDD;
+      left: .1em;
+    }
+  `]
 })
 export class AppComponent {
   title = 'FWT Team Builder';
   heroes = HEROES;
+  selectedHero: Hero;
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 }
