@@ -11,7 +11,7 @@ const HEROES: Hero[] = [
   id: 1,
   name: 'Momo',
   property: 'rock',
-  type: 'attack',
+  type: 'Attack',
   },
   {
   id: 2,
@@ -66,19 +66,26 @@ const HEROES: Hero[] = [
 @Component({
   selector: 'fwt-tb',
   template: `
-  <div class="row">
-    <h1 class="display-4 col">{{title}}</h1><div class="col"><h4>property</h4>
-      <i class="em em-gem"></i> Rock
-      <i class="em em-page_facing_up"></i> Paper
-      <i class="em em-scissors"></i> Scissors
-</div>
-      <div class="col">
-    <h4>type</h4>
-      <i class="em em-eight_spoked_asterisk"></i> A.Attack
-      <i class="em em-large_orange_diamond"></i> Attack
-      <i class="em em-arrows_counterclockwise"></i> Balance
-      <i class="em em-large_blue_circle"></i> Defense
-      <i class="em em-heart_decoration"></i> Support</div>
+  <div class="row mt-2" style="background:papayawhip;">
+    <h1 class="display-4 col">{{title}}</h1>
+    <div class="col">
+      <h4>property</h4>
+      <ul class="list-unstyled">
+        <li><i class="em em-gem"></i> Rock</li>
+        <li><i class="em em-page_facing_up"></i> Paper</li>
+        <li><i class="em em-scissors"></i> Scissors</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>type</h4>
+      <ul class="list-unstyled">
+        <li><i class="em em-eight_spoked_asterisk"></i> AreaAttack</li>
+        <li><i class="em em-large_orange_diamond"></i> Attack</li>
+        <li><i class="em em-arrows_counterclockwise"></i> Balance</li>
+        <li><i class="em em-large_blue_circle"></i> Defense</li>
+        <li><i class="em em-heart_decoration"></i> Support</li>
+      </ul>
+    </div>
   </div>
   <ul class="flex-row m-2 p-2 list-unstyled">
     <li *ngFor="let hero of heroes" class="card flex-row justify-content-around m-2 p-2 bg-faded">
