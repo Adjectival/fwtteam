@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-
-export class Hero {
-  id: number;
-  name: string;
-  property: string;
-  type: string;
-}
+import { Hero } from './hero';
 const HEROES: Hero[] = [
   {
   id: 1,
@@ -62,7 +56,6 @@ const HEROES: Hero[] = [
   type: 'Balance',
   }
 ];
-
 @Component({
   selector: 'fwt-tb',
   template: `
@@ -87,12 +80,7 @@ const HEROES: Hero[] = [
       </ul>
     </div>
   </div>
-  <div *ngIf="selectedHero"
-    style="background:skyblue;">
-    <h1>{{selectedHero.name}}</h1>
-    <h2>{{selectedHero.property}}</h2>
-    <h2>{{selectedHero.type}}</h2>
-  </div>
+  <hero-detail [hero]="selectedHero"></hero-detail>
   <ul class="m-2 p-2 list-unstyled list-group">
     <li *ngFor="let hero of heroes"
       (click)="onSelect(hero)"
@@ -100,7 +88,7 @@ const HEROES: Hero[] = [
       class="list-group-item flex-row justify-content-around m-2 p-2 bg-faded">
       <h4><span class="badge badge-default">{{hero.id}}</span></h4>
       <h2>{{hero.name}}</h2>
-      <label>prop: </label><input [(ngModel)]="hero.property" placeholder="property">
+      <input [(ngModel)]="hero.property" placeholder="property">
       <h2>{{hero.type}}</h2>
     </li>
   </ul>`,

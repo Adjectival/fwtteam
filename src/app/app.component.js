@@ -6,12 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var Hero = (function () {
-    function Hero() {
-    }
-    return Hero;
-}());
-exports.Hero = Hero;
 var HEROES = [
     {
         id: 1,
@@ -81,7 +75,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'fwt-tb',
-        template: "\n  <div class=\"row\" style=\"background:papayawhip;\">\n    <h1 class=\"display-4 col\">{{title}}</h1>\n    <div class=\"col\">\n      <h4>property</h4>\n      <ul class=\"list-unstyled\">\n        <li><i class=\"em em-gem\"></i> Rock</li>\n        <li><i class=\"em em-page_facing_up\"></i> Paper</li>\n        <li><i class=\"em em-scissors\"></i> Scissors</li>\n      </ul>\n    </div>\n    <div class=\"col\">\n      <h4>type</h4>\n      <ul class=\"list-unstyled\">\n        <li><i class=\"em em-eight_spoked_asterisk\"></i> AreaAttack</li>\n        <li><i class=\"em em-large_orange_diamond\"></i> Attack</li>\n        <li><i class=\"em em-arrows_counterclockwise\"></i> Balance</li>\n        <li><i class=\"em em-large_blue_circle\"></i> Defense</li>\n        <li><i class=\"em em-heart_decoration\"></i> Support</li>\n      </ul>\n    </div>\n  </div>\n  <div *ngIf=\"selectedHero\"\n    style=\"background:skyblue;\">\n    <h1>{{selectedHero.name}}</h1>\n    <h2>{{selectedHero.property}}</h2>\n    <h2>{{selectedHero.type}}</h2>\n  </div>\n  <ul class=\"m-2 p-2 list-unstyled list-group\">\n    <li *ngFor=\"let hero of heroes\"\n      (click)=\"onSelect(hero)\"\n      [class.selected]=\"hero===selectedHero\"\n      class=\"list-group-item flex-row justify-content-around m-2 p-2 bg-faded\">\n      <h4><span class=\"badge badge-default\">{{hero.id}}</span></h4>\n      <h2>{{hero.name}}</h2>\n      <label>prop: </label><input [(ngModel)]=\"hero.property\" placeholder=\"property\">\n      <h2>{{hero.type}}</h2>\n    </li>\n  </ul>",
+        template: "\n  <div class=\"row\" style=\"background:papayawhip;\">\n    <h1 class=\"display-4 col\">{{title}}</h1>\n    <div class=\"col\">\n      <h4>property</h4>\n      <ul class=\"list-unstyled\">\n        <li><i class=\"em em-gem\"></i> Rock</li>\n        <li><i class=\"em em-page_facing_up\"></i> Paper</li>\n        <li><i class=\"em em-scissors\"></i> Scissors</li>\n      </ul>\n    </div>\n    <div class=\"col\">\n      <h4>type</h4>\n      <ul class=\"list-unstyled\">\n        <li><i class=\"em em-eight_spoked_asterisk\"></i> AreaAttack</li>\n        <li><i class=\"em em-large_orange_diamond\"></i> Attack</li>\n        <li><i class=\"em em-arrows_counterclockwise\"></i> Balance</li>\n        <li><i class=\"em em-large_blue_circle\"></i> Defense</li>\n        <li><i class=\"em em-heart_decoration\"></i> Support</li>\n      </ul>\n    </div>\n  </div>\n  <hero-detail [hero]=\"selectedHero\"></hero-detail>\n  <ul class=\"m-2 p-2 list-unstyled list-group\">\n    <li *ngFor=\"let hero of heroes\"\n      (click)=\"onSelect(hero)\"\n      [class.selected]=\"hero===selectedHero\"\n      class=\"list-group-item flex-row justify-content-around m-2 p-2 bg-faded\">\n      <h4><span class=\"badge badge-default\">{{hero.id}}</span></h4>\n      <h2>{{hero.name}}</h2>\n      <input [(ngModel)]=\"hero.property\" placeholder=\"property\">\n      <h2>{{hero.type}}</h2>\n    </li>\n  </ul>",
         styles: ["\n    .selected {\n      background-color: #CFD8DC !important;\n      color: white;\n    }\n    .heroes {\n      margin: 0 0 2em 0;\n      list-style-type: none;\n      padding: 0;\n      width: 15em;\n    }\n    .heroes li.selected:hover {\n      background-color: #BBD8DC !important;\n      color: white;\n    }\n    .heroes li:hover {\n      color: #607D8B;\n      background-color: #DDD;\n      left: .1em;\n    }\n  "]
     })
 ], AppComponent);
