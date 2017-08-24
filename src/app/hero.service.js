@@ -11,7 +11,7 @@ var HeroService = (function () {
     function HeroService() {
     }
     HeroService.prototype.getHeroes = function () {
-        return data_heroes_1.HEROES;
+        return Promise.resolve(data_heroes_1.HEROES);
     };
     return HeroService;
 }());
