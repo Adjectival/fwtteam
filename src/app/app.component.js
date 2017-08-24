@@ -18,6 +18,9 @@ var AppComponent = (function () {
     AppComponent.prototype.getHeroes = function () {
         this.heroes = this.heroService.getHeroes();
     };
+    AppComponent.prototype.ngOnInit = function () {
+        this.getHeroes();
+    };
     AppComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
