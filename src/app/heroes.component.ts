@@ -41,7 +41,6 @@ import { HeroService } from './hero.service';
       left: .1em;
     }
   `],
-  providers: [ HeroService ]
 })
 export class HeroesComponent implements OnInit{
   heroes: Hero[];

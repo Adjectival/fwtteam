@@ -31,7 +31,6 @@ HeroesComponent = __decorate([
         selector: 'my-heroes',
         template: "\n  <hero-detail [hero]=\"selectedHero\"></hero-detail>\n\n  <ul class=\"m-2 p-2 list-unstyled list-group\">\n    <li *ngFor=\"let hero of heroes\"\n      (click)=\"onSelect(hero)\"\n      [class.selected]=\"hero===selectedHero\"\n      class=\"list-group-item flex-row justify-content-around m-2 p-2 bg-faded\">\n      <h4><span class=\"badge badge-default\">{{hero.id}}</span></h4>\n      <h2>{{hero.name}}</h2>\n      <input [(ngModel)]=\"hero.property\" placeholder=\"property\">\n      <h2>{{hero.type}}</h2>\n    </li>\n  </ul>\n  ",
         styles: ["\n    .selected {\n      background-color: orange !important;\n      color: white;\n    }\n    .heroes {\n      margin: 0 0 2em 0;\n      list-style-type: none;\n      padding: 0;\n      width: 15em;\n    }\n    .heroes li.selected:hover {\n      background-color: orange !important;\n      color: white;\n    }\n    .heroes li:hover {\n      color: maroon;\n      background-color: ivory;\n      left: .1em;\n    }\n  "],
-        providers: [hero_service_1.HeroService]
     }),
     __metadata("design:paramtypes", [hero_service_1.HeroService])
 ], HeroesComponent);

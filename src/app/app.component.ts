@@ -4,7 +4,12 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
   <div class="row" style="background:papayawhip;">
-    <h1 class="col mx-2">{{title}}</h1>
+    <h1 class="col mx-2">{{title}}
+    <a routerLink="/heroes">Heroes</a>
+    </h1>
+    <h4>
+      <router-outlet></router-outlet>
+    </h4>
 
     <div class="col">
       <h4>property</h4>
