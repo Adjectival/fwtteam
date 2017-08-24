@@ -7,9 +7,9 @@ import { Hero } from './hero';
     <div *ngIf="hero"
       class="card m-3 p-2"
       style="background:skyblue;">
-      <h1>{{hero.name}}</h1>
-      <h2>{{hero.property}}</h2>
-      <h2>{{hero.type}}</h2>
+      <h5>{{hero.name}}</h5>
+      <h6>{{hero.property}}</h6>
+      <h6>{{hero.type}}</h6>
     </div>`,
 })
 export class HeroDetailComponent {
