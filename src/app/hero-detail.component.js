@@ -22,7 +22,7 @@ __decorate([
 HeroDetailComponent = __decorate([
     core_1.Component({
         selector: 'hero-detail',
-        template: "\n    <div *ngIf=\"hero\"\n      class=\"card m-3 p-2\"\n      style=\"background:skyblue;\">\n      <h1>{{hero.name}}</h1>\n      <h2>{{hero.property}}</h2>\n      <h2>{{hero.type}}</h2>\n    </div>",
+        template: "\n    <div *ngIf=\"hero\"\n      class=\"card m-3 p-2\"\n      style=\"background:skyblue;\">\n      <h5>{{hero.name}}</h5>\n      <h6>{{hero.property}}</h6>\n      <h6>{{hero.type}}</h6>\n    </div>",
     })
 ], HeroDetailComponent);
 exports.HeroDetailComponent = HeroDetailComponent;
