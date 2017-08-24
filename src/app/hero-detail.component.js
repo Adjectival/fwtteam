@@ -27,4 +27,3 @@ HeroDetailComponent = __decorate([
 ], HeroDetailComponent);
 exports.HeroDetailComponent = HeroDetailComponent;
 //# sourceMappingURL=hero-detail.component.js.map
-//# sourceMappingURL=hero-detail.component.js.map
