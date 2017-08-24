@@ -1,61 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { Hero } from './hero';
-const HEROES: Hero[] = [
-  {
-  id: 1,
-  name: 'Momo',
-  property: 'rock',
-  type: 'Attack',
-  },
-  {
-  id: 2,
-  name: 'Mu',
-  property: 'paper',
-  type: 'Balance',
-  },
-  {
-  id: 3,
-  name: 'Carrot',
-  property: 'paper',
-  type: 'Attack',
-  },
-  {
-  id: 4,
-  name: 'Deborah',
-  property: 'scissors',
-  type: 'AreaAttack',
-  },
-  {
-  id: 5,
-  name: 'Kai',
-  property: 'rock',
-  type: 'Balance',
-  },
-  {
-  id: 6,
-  name: 'Alfred',
-  property: 'rock',
-  type: 'AreaAttack',
-  },
-  {
-  id: 7,
-  name: 'Lance',
-  property: 'scissors',
-  type: 'Defense',
-  },
-  {
-  id: 8,
-  name: 'Mas',
-  property: 'paper',
-  type: 'Support',
-  },
-  {
-  id: 9,
-  name: 'Ian',
-  property: 'rock',
-  type: 'Balance',
-  }
-];
+import { HeroService } from './hero.service';
+
 @Component({
   selector: 'fwt-tb',
   template: `
@@ -80,7 +27,9 @@ const HEROES: Hero[] = [
       </ul>
     </div>
   </div>
+
   <hero-detail [hero]="selectedHero"></hero-detail>
+
   <ul class="m-2 p-2 list-unstyled list-group">
     <li *ngFor="let hero of heroes"
       (click)="onSelect(hero)"
@@ -91,10 +40,11 @@ const HEROES: Hero[] = [
       <input [(ngModel)]="hero.property" placeholder="property">
       <h2>{{hero.type}}</h2>
     </li>
-  </ul>`,
+  </ul>
+  `,
   styles: [`
     .selected {
-      background-color: #CFD8DC !important;
+      background-color: orange !important;
       color: white;
     }
     .heroes {
@@ -104,21 +54,30 @@ const HEROES: Hero[] = [
       width: 15em;
     }
     .heroes li.selected:hover {
-      background-color: #BBD8DC !important;
+      background-color: orange !important;
       color: white;
     }
     .heroes li:hover {
-      color: #607D8B;
-      background-color: #DDD;
+      color: maroon;
+      background-color: ivory;
       left: .1em;
     }
-  `]
+  `],
+  providers: [ HeroService ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'FWT Team Builder';
-  heroes = HEROES;
+  heroes: Hero[];
   selectedHero: Hero;
 
+  constructor(private heroService: HeroService) {}
+
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
+  }
+  ngOnInit(): void {
+    this.getHeroes();
+  }
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
