@@ -6,6 +6,7 @@ import { RouterModule }   from '@angular/router';
 import { AppComponent }  from './app.component';
 import { HeroesComponent }  from './heroes.component';
 import { HeroDetailComponent }  from './hero-detail.component';
+import { DashboardComponent }  from './dashboard.component';
 import { HeroService }          from './hero.service';
 
 
@@ -18,13 +19,23 @@ import { HeroService }          from './hero.service';
       {
         path: 'heroes',
         component: HeroesComponent
-      }
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
     ])
   ],
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent ],
+    HeroDetailComponent,
+    DashboardComponent  ],
   providers:    [ HeroService ],
   bootstrap:    [ AppComponent ]
 })

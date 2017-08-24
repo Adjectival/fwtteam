@@ -4,13 +4,13 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
   <div class="row" style="background:papayawhip;">
-    <h1 class="col mx-2">{{title}}
-    <a routerLink="/heroes">Heroes</a>
-    </h1>
-    <h4>
-      <router-outlet></router-outlet>
-    </h4>
-
+    <div class="col mx-2"><h1>{{title}}</h1>
+      <a routerLink="/dashboard">
+        <i class="fa fa-dashboard"></i>
+      </a>
+      <a routerLink="/heroes">Heroes</a>
+    </div>
+    <router-outlet class="col"></router-outlet>
     <div class="col">
       <h4>property</h4>
       <ul class="list-unstyled">
